@@ -114,5 +114,10 @@ namespace DashBoard
         {
             //RefreshGrid();
         }
+
+        private void AddItemForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

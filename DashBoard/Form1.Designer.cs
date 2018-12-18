@@ -30,6 +30,7 @@ namespace DashBoard
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -38,17 +39,22 @@ namespace DashBoard
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.إضافةصنفجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewItems)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(301, 58);
+            this.button1.Location = new System.Drawing.Point(114, 107);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 38);
             this.button1.TabIndex = 0;
@@ -58,14 +64,14 @@ namespace DashBoard
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(61, 31);
+            this.textBox1.Location = new System.Drawing.Point(53, 81);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(234, 20);
             this.textBox1.TabIndex = 1;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(301, 29);
+            this.button2.Location = new System.Drawing.Point(293, 79);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -78,7 +84,8 @@ namespace DashBoard
             this.GridViewItems.AllowUserToAddRows = false;
             this.GridViewItems.AllowUserToDeleteRows = false;
             this.GridViewItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridViewItems.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.GridViewItems.BackgroundColor = System.Drawing.Color.MediumSeaGreen;
+            this.GridViewItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -86,10 +93,10 @@ namespace DashBoard
             this.Column2,
             this.Column4});
             this.GridViewItems.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.GridViewItems.Location = new System.Drawing.Point(0, 293);
+            this.GridViewItems.Location = new System.Drawing.Point(0, 255);
             this.GridViewItems.Name = "GridViewItems";
             this.GridViewItems.ReadOnly = true;
-            this.GridViewItems.Size = new System.Drawing.Size(1374, 475);
+            this.GridViewItems.Size = new System.Drawing.Size(1374, 513);
             this.GridViewItems.TabIndex = 3;
             this.GridViewItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GirdViewItems_CellDoubleClick);
             // 
@@ -122,56 +129,96 @@ namespace DashBoard
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1215, 204);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 63);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "اضافه صنف جديد";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(6, 37);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(402, 35);
+            this.textBox2.Size = new System.Drawing.Size(442, 35);
             this.textBox2.TabIndex = 5;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(24, 187);
+            this.groupBox1.Location = new System.Drawing.Point(450, 107);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(454, 100);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بحث";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1118, 49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(216, 158);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.إضافةصنفجديدToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1374, 30);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // إضافةصنفجديدToolStripMenuItem
+            // 
+            this.إضافةصنفجديدToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold);
+            this.إضافةصنفجديدToolStripMenuItem.Name = "إضافةصنفجديدToolStripMenuItem";
+            this.إضافةصنفجديدToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.إضافةصنفجديدToolStripMenuItem.Text = "إضافة صنف جديد";
+            this.إضافةصنفجديدToolStripMenuItem.Click += new System.EventHandler(this.إضافةصنفجديدToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(65, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(274, 25);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "لإدخال ملف اكسيل بكامل  البيانات";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1374, 768);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.GridViewItems);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "لوحة تحكم أصناف عايز";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridViewItems)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,13 +230,16 @@ namespace DashBoard
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView GridViewItems;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column4;
+        private PictureBox pictureBox1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem إضافةصنفجديدToolStripMenuItem;
+        private Label label1;
 
         public DataGridView GridViewItems1 { get => GridViewItems; set => GridViewItems = value; }
     }

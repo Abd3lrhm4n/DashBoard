@@ -26,9 +26,17 @@ namespace DashBoard
           
             using (MyContext ctx = new MyContext())
             {
-                if (ctx.Items.Any())
+                try
                 {
-                    GridViewItems.DataSource = ctx.Items.ToList();
+                    if (ctx.Items.Any())
+                    {
+                        GridViewItems.DataSource = ctx.Items.ToList();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -88,6 +96,11 @@ namespace DashBoard
             {
                 GridViewItems.DataSource = db.Items.Where(x => x.Name.Contains(textBox2.Text) || x.BarCode.Contains(textBox2.Text)).ToList();
             }
+        }
+
+        private void إضافةصنفجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddItemForm().ShowDialog();
         }
     }
 }
