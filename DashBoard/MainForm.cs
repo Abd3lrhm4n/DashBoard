@@ -24,9 +24,13 @@ namespace DashBoard
 
         private void Form1_Load(object sender, EventArgs e)
         {
+          
             using (MyContext ctx = new MyContext())
             {
-                GridViewItems.DataSource = ctx.Items.ToList();
+                if (ctx.Items.Any())
+                {
+                    GridViewItems.DataSource = ctx.Items.ToList();
+                }
             }
         }
 
@@ -63,12 +67,20 @@ namespace DashBoard
 
         private void GirdViewItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Id = Convert.ToInt32( GridViewItems.Rows[e.RowIndex].Cells[0].Value);
-            name = GridViewItems.Rows[e.RowIndex].Cells[2].Value.ToString();
-            barcode = GridViewItems.Rows[e.RowIndex].Cells[1].Value.ToString();
-            price = GridViewItems.Rows[e.RowIndex].Cells[3].Value.ToString();
+            if (GridViewItems.Rows.Count > 0)
+            {
+                Id = Convert.ToInt32(GridViewItems.Rows[e.RowIndex].Cells[0].Value);
+                if (Id > 0)
+                {
+                    name = GridViewItems.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    barcode = GridViewItems.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    price = GridViewItems.Rows[e.RowIndex].Cells[3].Value.ToString();
 
-            new MidForm().ShowDialog();
+                    new MidForm().ShowDialog();
+                }
+            }
+
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
