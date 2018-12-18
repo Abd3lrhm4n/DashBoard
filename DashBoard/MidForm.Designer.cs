@@ -61,7 +61,9 @@
             this.ClientSize = new System.Drawing.Size(488, 216);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MidForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MidForm";
             this.ResumeLayout(false);
 

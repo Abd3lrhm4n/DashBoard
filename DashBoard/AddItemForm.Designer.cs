@@ -131,7 +131,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.btnSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AddItemForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddItemForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddItemForm_FormClosed);
             this.ResumeLayout(false);

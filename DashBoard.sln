@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BussinessLayer", "BussinessLayer\BussinessLayer.csproj", "{6FB94A03-42DD-419F-B2B4-DAB3891C621B}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "3ayezDashBoard", "3ayezDashBoard\3ayezDashBoard.vdproj", "{3BE5A5A9-6D8D-4FAD-9BDA-4BDFA702F6E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{6FB94A03-42DD-419F-B2B4-DAB3891C621B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FB94A03-42DD-419F-B2B4-DAB3891C621B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FB94A03-42DD-419F-B2B4-DAB3891C621B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BE5A5A9-6D8D-4FAD-9BDA-4BDFA702F6E9}.Debug|Any CPU.ActiveCfg = Debug
+		{3BE5A5A9-6D8D-4FAD-9BDA-4BDFA702F6E9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
