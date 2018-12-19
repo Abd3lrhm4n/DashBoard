@@ -19,18 +19,9 @@ namespace DashBoard
 
         public MainForm()
         {
-            Thread t = new Thread(new ThreadStart(LoadingForm));
-            t.Start();
-            this.Hide();
             InitializeComponent();
-            t.Abort();
-            this.Show();
         }
 
-        public void LoadingForm()
-        {
-            Application.Run(new LoadingForm());
-        }
         private void Form1_Load(object sender, EventArgs e)
         {
           
