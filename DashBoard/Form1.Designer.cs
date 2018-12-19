@@ -132,9 +132,8 @@ namespace DashBoard
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(6, 37);
-            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(442, 35);
+            this.textBox2.Size = new System.Drawing.Size(442, 25);
             this.textBox2.TabIndex = 5;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -145,7 +144,7 @@ namespace DashBoard
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(450, 107);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(454, 100);
+            this.groupBox1.Size = new System.Drawing.Size(454, 77);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بحث";
@@ -153,9 +152,9 @@ namespace DashBoard
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1118, 49);
+            this.pictureBox1.Location = new System.Drawing.Point(1195, 49);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 158);
+            this.pictureBox1.Size = new System.Drawing.Size(139, 96);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;

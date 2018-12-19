@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer;
@@ -18,9 +19,18 @@ namespace DashBoard
 
         public MainForm()
         {
+            Thread t = new Thread(new ThreadStart(LoadingForm));
+            t.Start();
+            this.Hide();
             InitializeComponent();
+            t.Abort();
+            this.Show();
         }
 
+        public void LoadingForm()
+        {
+            Application.Run(new LoadingForm());
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
           
