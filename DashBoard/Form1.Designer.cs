@@ -30,6 +30,7 @@ namespace DashBoard
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -83,6 +84,9 @@ namespace DashBoard
             // 
             this.GridViewItems.AllowUserToAddRows = false;
             this.GridViewItems.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridViewItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridViewItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridViewItems.BackgroundColor = System.Drawing.Color.MediumSeaGreen;
             this.GridViewItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -96,6 +100,7 @@ namespace DashBoard
             this.GridViewItems.Location = new System.Drawing.Point(0, 255);
             this.GridViewItems.Name = "GridViewItems";
             this.GridViewItems.ReadOnly = true;
+            this.GridViewItems.RowTemplate.Height = 30;
             this.GridViewItems.Size = new System.Drawing.Size(1374, 513);
             this.GridViewItems.TabIndex = 3;
             this.GridViewItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GirdViewItems_CellDoubleClick);
@@ -131,9 +136,10 @@ namespace DashBoard
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(6, 37);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(442, 25);
+            this.textBox2.Size = new System.Drawing.Size(442, 32);
             this.textBox2.TabIndex = 5;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -142,7 +148,7 @@ namespace DashBoard
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(450, 107);
+            this.groupBox1.Location = new System.Drawing.Point(468, 131);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(454, 77);
             this.groupBox1.TabIndex = 6;
