@@ -13,7 +13,7 @@ using DataAccessLayer;
 
 namespace DashBoard
 {
-    public partial class AddItemForm : Form 
+    public partial class AddItemForm : Form
     {
         public int id { get; set; } = 0;
         MainForm main = new MainForm();
@@ -34,30 +34,40 @@ namespace DashBoard
                 txtCode.Text = item.BarCode;
                 txtPrice.Text = item.Price.ToString();
             }
-            
+
         }
 
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            MyContext ctx = new MyContext();
             if (txtPrice.Text.Trim() != "" && txtCode.Text.Trim() != "" && txtItem.Text.Trim() != "")
             {
                 if (Regex.IsMatch(txtPrice.Text, @"^[0-9]\d{0,9}(\.\d{1,2})?%?$"))
                 {
-                    if (Regex.IsMatch(txtCode.Text, @"^[0-9]\d{0,9}"))
+                    if (Regex.IsMatch(txtCode.Text, @"^[0-9]+$"))
                     {
+
                         if (id == 0)
                         {
-                            MessageBox.Show(BL.InsertItem(new Item()
+                            if (!ctx.Items.Any(x => x.BarCode == txtCode.Text))
                             {
-                                BarCode = txtCode.Text,
-                                Name = txtItem.Text,
-                                Price = Convert.ToDecimal(txtPrice.Text)
-                            }));
+                                MessageBox.Show(BL.InsertItem(new Item()
+                                {
+                                    BarCode = txtCode.Text,
+                                    Name = txtItem.Text,
+                                    Price = Convert.ToDecimal(txtPrice.Text)
+                                }));
 
-                            //clear text
-                            txtCode.Text = txtItem.Text = txtPrice.Text = string.Empty;
-                            RefreshGrid();
+                                //clear text
+                                txtCode.Text = txtItem.Text = txtPrice.Text = string.Empty;
+                                RefreshGrid();
+                            }
+                            else
+                            {
+                                MessageBox.Show("لا يمكنك تكرار الباركو اكثر من مره");
+                            }
+
                         }
                         else
                         {
@@ -69,11 +79,13 @@ namespace DashBoard
                                 Price = Convert.ToDecimal(txtPrice.Text)
                             }));
                             id = 0;
-                            main.Invoke(new MethodInvoker( RefreshGrid));
+                            main.Invoke(new MethodInvoker(RefreshGrid));
                             this.Close();
                         }
-                       
-                    }else
+
+
+                    }
+                    else
                     {
                         MessageBox.Show("برجاء ادخال الكود صحيح");
                     }
@@ -107,6 +119,10 @@ namespace DashBoard
                 {
                     this.Close();
                 }
+            }
+            else
+            {
+                this.Close();
             }
         }
 

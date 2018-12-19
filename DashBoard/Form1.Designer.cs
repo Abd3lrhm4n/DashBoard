@@ -30,7 +30,6 @@ namespace DashBoard
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -84,9 +83,6 @@ namespace DashBoard
             // 
             this.GridViewItems.AllowUserToAddRows = false;
             this.GridViewItems.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridViewItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridViewItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridViewItems.BackgroundColor = System.Drawing.Color.MediumSeaGreen;
             this.GridViewItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
