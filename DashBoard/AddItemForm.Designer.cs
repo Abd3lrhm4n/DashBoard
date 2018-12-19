@@ -52,6 +52,7 @@
             // 
             // Exit
             // 
+            this.Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Exit.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit.ForeColor = System.Drawing.Color.Red;
             this.Exit.Location = new System.Drawing.Point(87, 212);
@@ -124,10 +125,12 @@
             // 
             // AddItemForm
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CancelButton = this.Exit;
             this.ClientSize = new System.Drawing.Size(556, 266);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtCode);
