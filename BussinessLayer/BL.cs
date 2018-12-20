@@ -34,9 +34,9 @@ namespace BussinessLayer
         {
             try
             {
-                _myContext.Items.Attach(item);
                 _myContext.Entry(item).State = EntityState.Modified;
                 _myContext.SaveChanges();
+                _myContext.Entry(item).State = EntityState.Detached;
 
                 return $"تم تعديل الصنف بنجاح";
             }
