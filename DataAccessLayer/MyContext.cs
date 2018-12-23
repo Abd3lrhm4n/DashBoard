@@ -15,6 +15,10 @@ namespace DataAccessLayer
         {
             Database.SetInitializer<MyContext>(null);
             modelBuilder.Entity<Item>().Property(p => p.Price).HasPrecision(9, 2);
+
+            //make storeProcedures
+            modelBuilder.Entity<Item>().MapToStoredProcedures();
+
             base.OnModelCreating(modelBuilder);
         }
     }

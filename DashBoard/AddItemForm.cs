@@ -19,6 +19,7 @@ namespace DashBoard
         MainForm main = new MainForm();
         public AddItemForm()
         {
+            
             InitializeComponent();
             main = (MainForm)Application.OpenForms["MainForm"];
         }

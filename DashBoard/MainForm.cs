@@ -52,14 +52,22 @@ namespace DashBoard
             {
                 //MessageBox.Show(theDialog.FileName.ToString());
                 textBox1.Text = theDialog.FileName.ToString();
-                pathToFile = theDialog.FileName;//doesn't need .tostring because .filename returns a string// saves the location of the selected object
+                //doesn't need .tostring because .filename returns a string// saves the location of the selected object
+                pathToFile = theDialog.FileName;
 
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             new ExcelData().ReadExcel(pathToFile, 1);
+            using (MyContext ctx = new MyContext())
+            {
+                GridViewItems.DataSource = ctx.Items.ToList();
+            }
+            textBox1.Text = string.Empty;
+            MessageBox.Show("تم أضافة البيانات بنجاح");
         }
 
         private void button3_Click(object sender, EventArgs e)

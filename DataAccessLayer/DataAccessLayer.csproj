@@ -57,6 +57,10 @@
     <Compile Include="Migrations\201812180523225_fix.Designer.cs">
       <DependentUpon>201812180523225_fix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812222132560_make storeprocedure.cs" />
+    <Compile Include="Migrations\201812222132560_make storeprocedure.Designer.cs">
+      <DependentUpon>201812222132560_make storeprocedure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +75,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812180523225_fix.resx">
       <DependentUpon>201812180523225_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812222132560_make storeprocedure.resx">
+      <DependentUpon>201812222132560_make storeprocedure.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
