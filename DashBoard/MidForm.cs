@@ -27,10 +27,18 @@ namespace DashBoard
                 Item item = db.Items.FirstOrDefault(x => x.Id == main.Id);
                 try
                 {
-                    BL.DeleteItem(item);
-                    MessageBox.Show($"{item.Name} تم حذف");
-                    main.GridViewItems1.DataSource = db.Items.ToList();
-                    this.Close();
+                    var exitCheck = MessageBox.Show("هل تريد حذف هذا الصنف ؟", "تأكيد الحذف", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (exitCheck == DialogResult.OK)
+                    {
+                        BL.DeleteItem(item);
+                        MessageBox.Show($"{item.Name} تم حذف");
+                        main.GridViewItems1.DataSource = db.Items.ToList();
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
                 }
                 catch (Exception)
                 {

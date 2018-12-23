@@ -114,9 +114,8 @@ namespace DashBoard
         {
             if (txtCode.Text.Trim() != "" || txtItem.Text.Trim() != "" || txtPrice.Text.Trim() != "")
             {
-                DialogResult ExitCheck;
-                ExitCheck = MessageBox.Show("إذا خرجت الآن لن يتم حفظ البيانات الحاليه", "تأكيد خروج", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (ExitCheck == DialogResult.OK)
+                var exitCheck = MessageBox.Show("إذا خرجت الآن لن يتم حفظ البيانات الحاليه", "تأكيد خروج", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (exitCheck == DialogResult.OK)
                 {
                     this.Close();
                 }
