@@ -19,8 +19,8 @@ namespace BussinessLayer
         {
             try
             {
-                _myContext.Items.Add(item);
-                _myContext.SaveChanges();
+                _myContext.Database.ExecuteSqlCommand(
+                    $"Item_Insert @Name = {item.Name}, @BarCode = {item.BarCode}, @Price = {item.Price}");
 
                 return $"تم إدخال صنف جديد بنجاح";
             }
@@ -36,18 +36,8 @@ namespace BussinessLayer
         {
             try
             {
-                //_myContext.Entry(item).State = EntityState.Modified;
-                //_myContext.SaveChanges();
-                //_myContext.Entry(item).State = EntityState.Detached;
-
-                List<SqlParameter> param = new List<SqlParameter>();
-
-                param.Add(new SqlParameter("Name", item.Name));
-                param.Add(new SqlParameter("Id", item.Id));
-                param.Add(new SqlParameter("BarCode", item.BarCode));
-                param.Add(new SqlParameter("Price", item.Price));
-
-                _myContext.Database.SqlQuery<Item>("Item_Update @Id, @BarCode, @Name, @Price", param.ToArray());
+                _myContext.Database.ExecuteSqlCommand(
+                    $"Item_Update @Name = {item.Name}, @BarCode = {item.BarCode}, @Price = {item.Price}, @Id = {item.Id}");
 
                 return $"تم تعديل الصنف بنجاح";
             }
@@ -62,9 +52,7 @@ namespace BussinessLayer
         {
             try
             {
-                _myContext.Entry(item).State = EntityState.Deleted;
-                _myContext.SaveChanges();
-                _myContext.Entry(item).State = EntityState.Detached;
+                _myContext.Database.ExecuteSqlCommand($"Item_Delete @Id = {item.Id}");
                 return $"تم حذف الصنف بنجاح";
 
             }

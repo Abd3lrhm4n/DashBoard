@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccessLayer;
+using BussinessLayer;
 namespace DashBoard
 {
     public partial class MidForm : Form
@@ -23,11 +24,10 @@ namespace DashBoard
         {
             using (MyContext db= new MyContext())
             {
-                Item item = db.Items.Where(x => x.Id == main.Id).FirstOrDefault();
+                Item item = db.Items.FirstOrDefault(x => x.Id == main.Id);
                 try
                 {
-                    db.Items.Remove(item);
-                    db.SaveChanges();
+                    BL.DeleteItem(item);
                     MessageBox.Show($"{item.Name} تم حذف");
                     main.GridViewItems1.DataSource = db.Items.ToList();
                     this.Close();
