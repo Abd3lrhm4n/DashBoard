@@ -68,6 +68,9 @@ namespace DashBoard
             }
             textBox1.Text = string.Empty;
             MessageBox.Show("تم أضافة البيانات بنجاح");
+            //cleanup
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
 
         private void button3_Click(object sender, EventArgs e)

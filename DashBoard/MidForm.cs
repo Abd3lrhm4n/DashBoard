@@ -18,6 +18,7 @@ namespace DashBoard
         {
             main = (MainForm)Application.OpenForms["MainForm"];
             InitializeComponent();
+            btnEdit.Focus();
         }
 
         private void button4_Click(object sender, EventArgs e)

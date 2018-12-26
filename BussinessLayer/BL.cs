@@ -20,7 +20,7 @@ namespace BussinessLayer
             try
             {
                 _myContext.Database.ExecuteSqlCommand(
-                    $"Item_Insert @Name = {item.Name}, @BarCode = {item.BarCode}, @Price = {item.Price}");
+                    $"Item_Insert @Name = N'{item.Name}', @BarCode = N'{item.BarCode}', @Price = {item.Price}");
 
                 return $"تم إدخال صنف جديد بنجاح";
             }
@@ -37,7 +37,7 @@ namespace BussinessLayer
             try
             {
                 _myContext.Database.ExecuteSqlCommand(
-                    $"Item_Update @Name = {item.Name}, @BarCode = {item.BarCode}, @Price = {item.Price}, @Id = {item.Id}");
+                    $"Item_Update @Name = N'{item.Name}', @BarCode = N'{item.BarCode}', @Price = {item.Price}, @Id = {item.Id}");
 
                 return $"تم تعديل الصنف بنجاح";
             }
